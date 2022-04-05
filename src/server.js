@@ -10,6 +10,8 @@ import HttpStatus from 'http-status-codes';
 
 import errorHandlerMiddleware from '@middlewares/errorHandlerMiddleware';
 
+import filesRoute from '@routes/filesRoute';
+
 const app = express();
 app.use(morgan('dev'));
 app.use(helmet());
@@ -31,6 +33,8 @@ app.use('/public', express.static(path.join(__dirname, 'static')));
 app.get('/healthcheck', (req, res) => {
   res.status(HttpStatus.OK).json({ message: 'Im good' });
 });
+
+app.use('/api', filesRoute);
 
 app.use(errorHandlerMiddleware);
 
