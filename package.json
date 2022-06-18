@@ -17,7 +17,9 @@
 		"@routes": "./src/routes",
 		"@services": "./src/services",
 		"@errors": "./src/errors",
-		"@database": "./src/database"
+		"@database": "./src/database",
+		"@templates": "./src/_templates",
+		"@pages": "./src/page"
 	},
   "dependencies": {
     "bcryptjs": "2.4.3",
