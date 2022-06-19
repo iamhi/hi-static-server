@@ -1,6 +1,7 @@
 import { readdir } from 'fs/promises';
 
-const PUBLIC_PREFIX = 'public';
+const SERVICE_PREFIX = process.env.SERVICE_PREFIX || '';
+const PUBLIC_PREFIX = (SERVICE_PREFIX) ? `${SERVICE_PREFIX}/public` : 'public';
 const STATIC_PREFIX = 'static';
 
 const listFiles = async (pathname) => {

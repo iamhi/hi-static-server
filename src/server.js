@@ -14,7 +14,11 @@ import filesRoute from '@routes/filesRoute';
 
 const app = express();
 app.use(morgan('dev'));
-app.use(helmet());
+/*
+app.use(helmet({
+    contentSecurityPolicy: false,
+  }));
+*/
 app.use(compression());
 app.use(
   cors({
